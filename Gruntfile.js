@@ -31,7 +31,13 @@ module.exports = function(grunt) {
         files: {
           'dist/css/bootstrap-namespaced.css': ['less/namespaced.less'],
         }
+      },
+      legacy: {
+        files: {
+          'dist/css/bootstrap-legacy.css' : ['less/legacy.less'],
+        }
       }
+
     },
     recess: {
       dist: {
