@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: ['less/*.less', '!less/s1-icons.less', '!less/mapped.less'],
-        tasks: ['less:compile', 'less:namespaced'],
+        tasks: ['less:compile', 'less:namespaced', 'less:legacy'],
         options: {
           livereload: true
         }
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('s1variables', ['clean:s1vars', 'clone-s1vars', 'copy:s1less', 'clean:tmp']);
   
-  grunt.registerTask('default', ['s1variables', 'copy:bootstrap', 'copy:icons', 'copy:fonts', 'less:compile', 'less:namespaced', 'recess', 'cssmin', 'clean:pages', 'build-icons-data', 'assemble', 'clean:tmp']);
+  grunt.registerTask('default', ['s1variables', 'copy:bootstrap', 'copy:icons', 'copy:fonts', 'less:compile', 'less:namespaced', 'less:legacy', 'recess', 'cssmin', 'clean:pages', 'build-icons-data', 'assemble', 'clean:tmp']);
   grunt.registerTask('serve', ['connect', 'watch']);
 
   grunt.registerTask('bump:gen', ['bump', 'assemble:pages']);
